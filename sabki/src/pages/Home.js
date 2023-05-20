@@ -25,7 +25,7 @@ function Home(){
                     <button style={{textAlign: "left"}} id="btn-panduan" onClick={handlePanduan}>Panduan </button>
                 </div>
                 <div className="col-md">
-                    <img src="people.svg" style={{width: "100%"}}></img>
+                    <img src="people.svg" style={{width: "100%"}} alt="people"/>
                 </div>
             </div>
         </Layout>

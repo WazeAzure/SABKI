@@ -2,14 +2,15 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+// import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Outlet, Link } from "react-router-dom";
 
 import "./Navbar.css";
 
 function Navigation() {
   return (
-    <Navbar bg="light" expand="lg" className="nav">
+    <>
+    <Navbar expand="lg" className="nav">
       <Container>
         <Navbar.Brand href="/">SABKI</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -22,6 +23,9 @@ function Navigation() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    <Outlet />
+    </>
+    
   );
 }
 

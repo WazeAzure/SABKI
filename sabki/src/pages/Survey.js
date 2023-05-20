@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../components/Layout";
-import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -10,7 +10,7 @@ import Sekolah from "./Sekolah";
 import Klinik from "./Klinik";
 import Ortu from "./Ortu";
 import RS from "./RS";
-import EndForm from "./EndForm";
+// import EndForm from "./EndForm";
 
 import "./Survey.css";
 
@@ -222,7 +222,7 @@ function Survey(){
 
     const handleNextBtn = () => {
         if (kategori !== ""){
-            if (kategori == "Individu / Orangtua" && page === 2){
+            if (kategori === "Individu / Orangtua" && page === 2){
                 setPage(5);
             } else {
                 setPage(page+1);

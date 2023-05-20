@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+// import { useState } from "react";
 import data_anak from "../data/anak.json";
 
 function Ortu({dataIndividu, setDataIndividu}){

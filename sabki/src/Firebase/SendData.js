@@ -1,5 +1,5 @@
-import { collection, getDocs, addDoc } from "firebase/firestore";
-import { app, store } from "./FirebaseConfig";
+import { collection, addDoc } from "firebase/firestore";
+import { store } from "./FirebaseConfig";
 
 export function SendDataIndividu(data){
     const sendItem = collection(store, "individu");
