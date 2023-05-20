@@ -1,0 +1,62 @@
+{
+    "tipe": [{
+        "nomor": 1,
+        "type": "Anak Disabilitas Penglihatan",
+        "deskripsi" : "adalah anak yang mengalami gangguan daya penglihatan berupa kebutaan menyeluruh (total) atau sebagian (low vision)."
+    },
+    {
+        "nomor": 2,
+        "type": "Anak Disabilitas Pendengaran",
+        "deskripsi": "adalah anak yang mengalami gangguan pendengaran, baik sebagian ataupun menyeluruh, dan biasanya memiliki hambatan dalam berbahasa dan berbicara."
+    },
+	{
+        "nomor": 3,
+        "type": "Anak Disabilitas Intelektual",
+        "deskripsi" : "adalah anak yang memiliki inteligensia yang signifikan berada dibawah rata-rata anak seusianya dan disertai dengan ketidakmampuan dalam adaptasi perilaku, yang muncul dalam masa perkembangan."
+    },
+	{
+        "nomor": 4,
+        "type": "Anak Disabilitas Fisik",
+        "deskripsi" : "adalah anak yang mengalami gangguan gerak akibat kelumpuhan, tidak lengkap anggota badan, kelainan bentuk dan fungsi tubuh atau anggota gerak."
+    },
+	{
+        "nomor": 5,
+        "type": "Anak Disabilitas Sosial",
+        "deskripsi" : "adalah anak yang memiliki masalah atau hambatan dalam mengendalikan emosi dan kontrol sosial, serta berperilaku menyimpang."
+    },
+	{
+        "nomor": 6,
+        "type": "Anak dengan ADHD/GPPH",
+        "deskripsi" : "adalah anak yang mengalami gangguan perkembangan, yang ditandai dengan sekumpulan masalah berupa ganggguan pengendalian diri, masalah rentang atensi atau perhatian, hiperaktivitas dan impulsivitas, yang menyebabkan kesulitan berperilaku, berfikir, dan mengendalikan emosi."
+    },
+	{
+        "nomor": 7,
+        "type": "Anak dengan Autism Spectrum Disorder (ASD)",
+        "deskripsi" : "adalah anak yang mengalami gangguan dalam tiga area dengan tingkatan berbeda-beda, yaitu kemampuan komunikasi dan interaksi sosial, serta pola-pola perilaku yang repetitif dan stereotipi."
+    },
+	{
+        "nomor": 8,
+        "type": "Anak dengan Gangguan Ganda",
+        "deskripsi" : " adalah anak yang memiliki dua atau lebih gangguan sehingga diperlukan pendampingan, layanan, pendidikan khusus, dan alat bantu belajar yang khusus."
+    },
+	{
+        "nomor": 9,
+        "type": "Anak dengan Lamban Belajar atau Slow Learner",
+        "deskripsi" : " adalah anak yang memiliki potensi intelektual sedikit dibawah rata-rata tetapi belum termasuk gangguan mental. Mereka butuh waktu lama dan berulang-ulang untuk dapat menyelesaikan tugas-tugas akademik maupun non akademik."
+    },
+	{
+        "nomor": 10,
+        "type": "Anak dengan Kesulitan Belajar Khusus atau Specific Learning Disabilities",
+        "deskripsi" : " adalah anak yang mengalami hambatan atau penyimpangan pada satu atau lebih proses psikologis dasar berupa ketidakmampuan mendengar, berpikir, berbicara, membaca, menulis, mengeja dan berhitung."
+    },
+	{
+        "nomor": 11,
+        "type": "Anak dengan Gangguan Kemampuan Komunikasi",
+        "deskripsi" : " adalah anak yang mengalami penyimpangan dalam bidang perkembangan bahasa wicara, suara, irama, dan kelancaran dari usia rata-rata yang disebabkan oleh faktor fisik, psikologis dan lingkungan, baik reseptif maupun ekspresif."
+    },
+	{
+        "nomor": 12,
+        "type": "Anak dengan Potensi Kecerdasan dan/atau Bakat Istimewa",
+        "deskripsi" : " adalah anak yang memiliki skor inteligensi yang tinggi (gifted), atau mereka yang unggul dalam bidang-bidang khusus (talented) seperti musik, seni, olah raga, dan kepemimpinan."
+    }]
+}

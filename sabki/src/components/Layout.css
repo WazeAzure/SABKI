@@ -1,12 +1,12 @@
 #home-id {
-    background-image: url("../../public/background-8.svg");
+    /* background-image: url("../image/background-8.svg"); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 #home2 {
-    background-image: url("../../public/background-9.svg");
+    /* background-image: url("../image/background-9.svg"); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

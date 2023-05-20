@@ -1,3 +1,4 @@
+import React from "react";
 import Navigation from "./Navbar.js";
 import Footer from "./Footer.js";
 
