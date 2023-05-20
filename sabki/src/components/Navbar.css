@@ -1,0 +1,57 @@
+.link {
+    text-decoration: none;
+    color: orange;
+    padding: 0 1rem 0 1rem;
+}
+
+.link:hover {
+    color: rgb(255, 114, 114);
+}
+
+.nav {
+    background-color: rgba(255, 248, 220, 0.5)!important;
+    position:sticky;   
+}
+
+#btn-survey {
+    padding: 0.5rem 1rem;
+    border: 0.15rem solid rgba(255, 114, 114, 1);
+    border-radius: 1rem;
+    background-color: rgba(255, 114, 114, 1);
+    color: cornsilk;
+    justify-self: left !important;
+    margin: 0 1rem;
+    float: left;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+#btn-survey:hover {
+    background-color: rgba(255, 114, 114,0.0);
+    border: 0.15rem solid rgba(255, 114, 114,1);
+    color: rgba(255, 114, 114,1);
+}
+
+.ic-survey {
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+}
+
+#btn-panduan {
+    padding: 0.5rem 1rem;
+    border: 0.15rem solid rgba(255, 114, 114, 1);
+    border-radius: 1rem;
+    background-color: rgba(255, 114, 114, 1);
+    color: cornsilk;
+    justify-self: left !important;
+    margin: 0 1rem;
+    float: left;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+#btn-panduan:hover {
+    background-color: rgba(255, 114, 114,0.0);
+    border: 0.15rem solid rgba(255, 114, 114,1);
+    color: rgba(255, 114, 114,1);
+}
