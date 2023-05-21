@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Layout from "../components/Layout";
 import {  useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -25,10 +25,12 @@ import Sekolah3 from "./Sekolah3";
 
 // popup
 import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function Survey(){
     const navigate = useNavigate();
+    const formRef = useRef(null);
 
     const [page, setPage] = useState(1);
     const [email, setEmail] = useState("");
@@ -213,7 +215,9 @@ function Survey(){
             position: toast.POSITION.TOP_RIGHT
         });
 
-        navigate("/");
+        setTimeout(() => {
+            navigate("/");
+          }, 3000); // Adjust the delay time as needed
     }
 
     const handleSelected = (e, type) => {
@@ -254,7 +258,7 @@ function Survey(){
             <div style={{minHeight: "81vh"}}>
             <h1 style={{marginTop: "2rem", color: "rgba(255, 114, 114, 1)", fontWeight: "bold", letterSpacing: "3px"}}>Survey ABK Indonesia</h1>
             <hr />
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} ref={formRef}>
                 { page === 1 && (
                 <>
                     <h2>Data Diri</h2>
