@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/www.surveiabkindonesia.com/static/css/main.c4f1c404.css",
-    "main.js": "/www.surveiabkindonesia.com/static/js/main.aa65ab12.js",
+    "main.js": "/www.surveiabkindonesia.com/static/js/main.5a1263ff.js",
     "static/js/496.179287f7.chunk.js": "/www.surveiabkindonesia.com/static/js/496.179287f7.chunk.js",
     "static/media/people.svg": "/www.surveiabkindonesia.com/static/media/people.46822414505f22b2124b1de009f1456a.svg",
     "static/media/background-9.svg": "/www.surveiabkindonesia.com/static/media/background-9.332c4caca42a42615120.svg",
     "static/media/background-8.svg": "/www.surveiabkindonesia.com/static/media/background-8.029d873a59ecaf5f88e1.svg",
     "index.html": "/www.surveiabkindonesia.com/index.html",
     "main.c4f1c404.css.map": "/www.surveiabkindonesia.com/static/css/main.c4f1c404.css.map",
-    "main.aa65ab12.js.map": "/www.surveiabkindonesia.com/static/js/main.aa65ab12.js.map",
+    "main.5a1263ff.js.map": "/www.surveiabkindonesia.com/static/js/main.5a1263ff.js.map",
     "496.179287f7.chunk.js.map": "/www.surveiabkindonesia.com/static/js/496.179287f7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c4f1c404.css",
-    "static/js/main.aa65ab12.js"
+    "static/js/main.5a1263ff.js"
   ]
 }
