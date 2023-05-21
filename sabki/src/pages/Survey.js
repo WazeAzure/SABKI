@@ -33,6 +33,7 @@ function Survey(){
     const [provinsiID, setProvinsiID] = useState(0);
     const [kota, setKota] = useState("");
     const [datakota, setDatakota] = useState([{"no":1, "name":""}]);
+    const [dataKotaSekolah, setDataKotaSekolah] = useState([{"no":1, "name":""}]);
     const [dataIndividu, setDataIndividu] = useState({
         "nama": "",
         "usia": "",
@@ -43,6 +44,7 @@ function Survey(){
     const [namaSekolah, setNamaSekolah] = useState("");
     const [kotaSekolah, setKotaSekolah] = useState("");
     const [provinsiSekolah, setProvinsiSekolah] = useState("");
+    const [provinsiSekolahID, setProvinsiSekolahID] = useState("");
     const [tingkatSekolah, setTingkatSekolah] = useState("");
     // Sekolah 1
     const [dataSekolah, setDataSekolah] = useState(
@@ -134,6 +136,23 @@ function Survey(){
     }, [provinsi])
 
     useEffect(() => {
+        console.log(provinsiSekolahID)
+        if (provinsiSekolahID !== 0){
+            let url = "https://api.binderbyte.com/wilayah/kabupaten?api_key=10140d3d1fbb41af4ae8827769a004177f501fbb50a43f10182e59649ace130f&id_provinsi=" + provinsiSekolahID
+            console.log(url)
+            axios.get(url)
+            .then((res) => {
+                const data_kota = res.data.value
+                setDataKotaSekolah(data_kota)
+                console.log(data_kota)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+        }
+    }, [provinsiSekolah])
+
+    useEffect(() => {
         window.scrollTo({top: 0});
     }, [page])
 
@@ -213,9 +232,10 @@ function Survey(){
             setProvinsiID(selectedOptionId)
         } else if (type === "kota"){
             setKota(selectedOption.value)
-        } else if (type === "provinsi"){
+        } else if (type === "provinsiSekolah"){
             setProvinsiSekolah(selectedOption.value)
-        } else if (type === "kota"){
+            setProvinsiSekolahID(selectedOptionId)
+        } else if (type === "kotaSekolah"){
             setKotaSekolah(selectedOption.value)
         }
     }
@@ -288,7 +308,7 @@ function Survey(){
                     <>
                     <div className="form-group">
                         <label htmlFor="name">Silahkan Masukkan Nama Sekolah!</label>
-                        <input type="text" value={namaSekolah} className="form-control" id="nama sekolah" placeholder="SD/SMP/SMA" onChange={(e) => setNamaSekolah(e.target.value)} required/>
+                        <input type="text" value={namaSekolah} className="form-control" id="nama sekolah" placeholder="SMP Negeri 1 Balikpapan" onChange={(e) => setNamaSekolah(e.target.value)} required/>
                     </div>
                     <div className="form-group">
                         <label htmlFor="kategori">Silahkan pilih Tingkatan Sekolah!</label>
@@ -306,7 +326,7 @@ function Survey(){
                     <div className="form-group">
                         <label htmlFor="kategori">Silahkan pilih asal provinsi sekolah!</label>
                         <select value={provinsiSekolah} className="form-control" id="id-kategori" onChange={(e) => {handleSelected(e, "provinsiSekolah")}} required>
-                        <option value="" selected disabled hidden>Nama Provinsi</option>
+                        <option value="" selected disabled hidden>Asal Provinsi</option>
                         { data_provinsi.map((prov) => (
                             <option id={prov.id}>{prov.name}</option>
                         ))}
@@ -315,8 +335,8 @@ function Survey(){
                     <div className="form-group">
                         <label htmlFor="kategori">Silahkan pilih asal kota sekolah!</label>
                         <select value={kotaSekolah} className="form-control" id="id-kategori" onChange={(e) => {handleSelected(e, "kotaSekolah")}} required>
-                        <option value="" selected disabled hidden>Nama Kota</option>
-                        { datakota.map((kota) => (
+                        <option value="" selected disabled hidden>Asal Kota</option>
+                        { dataKotaSekolah.map((kota) => (
                             <option id={kota.id}>{kota.name}</option>
                         ))}
                         </select>

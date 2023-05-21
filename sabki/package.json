@@ -17,18 +17,11 @@
       "react-app/jest"
     ]
   },
-  "browserslist": {
-    "production": [
+  "browserslist": [
       ">0.2%",
       "not dead",
       "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
+  ],
   "devDependencies": {
     "gh-pages": "^5.0.0",
     "web-vitals": "^3.3.1"
@@ -37,10 +30,12 @@
     "axios": "^1.4.0",
     "bootstrap": "^5.2.3",
     "firebase": "^9.22.0",
+    "leaflet": "^1.9.4",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.4",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
+    "react-leaflet": "^4.2.1",
     "react-router-dom": "^6.11.2",
     "react-scripts": "^2.1.3"
   }

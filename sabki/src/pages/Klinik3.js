@@ -22,10 +22,10 @@ function Klinik3({dataKlinik, setDataKlinik}){
             <h3>Rentang Umur Pasien 13-17 Tahun</h3>
             <p>Silakan isi sesuai dengan jumlah pasien yang berada di klinik berdasarkan kategori masing-masing→ instansi langsung input jumlahnya dari setiap kategori</p>
             <hr />
-            { data.map((pasien) => (
+            { data.map((pasien, index) => (
                 <div className="form-group">
                     <label htmlFor="name" id={pasien.nomor}>Silahkan Masukkan Jumlah {pasien.type}!</label>
-                    <input type="number" className="form-control" id={pasien.nomor} placeholder="0" onChange={handleUpdate} required/>
+                    <input value={dataKlinik[index].jumlah === 0? "": dataKlinik[index].jumlah} type="number" className="form-control" id={pasien.nomor} placeholder="0" onChange={handleUpdate} required/>
                 </div>
             ))}
         </div>

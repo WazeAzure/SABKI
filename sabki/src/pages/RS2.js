@@ -30,10 +30,10 @@ function RS2({dataRS, setDataRS, bpjs, setBpjs, nonbpjs, setNonbpjs}){
                 <label htmlFor="name" id={1}>Silahkan Masukkan Jumlah Pasien Non-BPJS!</label>
                 <input type="number" value={nonbpjs} className="form-control"  placeholder="0" onChange={(e) => {setNonbpjs(e.target.value)}} required/>
             </div>
-            { data.map((pasien) => (
+            { data.map((pasien, index) => (
                 <div className="form-group">
                     <label htmlFor="name" id={pasien.nomor}>Silahkan Masukkan Jumlah {pasien.type}!</label>
-                    <input type="number" className="form-control" id={pasien.nomor} placeholder="0" onChange={handleUpdate} required/>
+                    <input value={dataRS[index].jumlah === 0? "": dataRS[index].jumlah} type="number" className="form-control" id={pasien.nomor} placeholder="0" onChange={handleUpdate} required/>
                 </div>
             ))}
 

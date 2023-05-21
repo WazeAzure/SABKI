@@ -10,11 +10,11 @@ function Ortu({dataIndividu, setDataIndividu}){
             <h2>Individu / Orangtua</h2>
             <div className="form-group">
                 <label htmlFor="name">Silahkan Masukkan Nama Anak Anda!</label>
-                <input type="text" value={dataIndividu.name} className="form-control" id="name" placeholder="Edbert" onChange={(e) => {setDataIndividu(prevState => ({...prevState, "nama": e.target.value}))}} required/>
+                <input type="text" value={dataIndividu.name} className="form-control" id="name" placeholder="nama anak" onChange={(e) => {setDataIndividu(prevState => ({...prevState, "nama": e.target.value}))}} required/>
             </div>
             <div className="form-group">
                 <label htmlFor="usia">Silahkan Masukkan Usia Anak Anda!</label>
-                <input type="number" value={dataIndividu.usia} className="form-control" id="usia" placeholder="Edbert" onChange={(e) => setDataIndividu(prevState => ({...prevState, "usia": e.target.value}))} required/>
+                <input type="number" value={dataIndividu.usia} className="form-control" id="usia" placeholder="17" onChange={(e) => setDataIndividu(prevState => ({...prevState, "usia": e.target.value}))} required/>
             </div>
             <div className="form-group">
                 <label htmlFor="jenis_kelamin">Silahkan pilih jenis kelamin anak anda!</label>
