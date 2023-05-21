@@ -5,6 +5,7 @@ import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 
 import { useOutletContext } from "react-router-dom";
+import PetaIndo from "../components/Map";
 
 function Home(){
     const [open, setOpen] = useOutletContext();
@@ -30,7 +31,7 @@ function Home(){
                     <button style={{textAlign: "left"}} id="btn-panduan" onClick={handlePanduan}>Panduan</button>
                 </div>
                 <div className="col-sm">
-                    <img src="people.svg" style={{width: "100%"}} alt="people"/>
+                    <img src={require("../image/people.svg").default} style={{width: "100%"}} alt="people"/>
                 </div>
             </div>
         </Layout>

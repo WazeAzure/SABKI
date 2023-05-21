@@ -10,6 +10,7 @@ import Home from './pages/Home';
 import Survey from './pages/Survey';
 import Panduan from './pages/Panduan';
 import ErrorPage from './pages/ErrorPage';
+import PetaIndo from './components/Map';
 
 function App() {
   useEffect(() => {
@@ -23,6 +24,7 @@ function App() {
           <Route index element={<Home />} />
           <Route exact path="survey" element={<Survey />} />
           <Route exact path="panduan" element={<Panduan />} />
+          <Route exact path="peta" element={<PetaIndo />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
