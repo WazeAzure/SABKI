@@ -78,6 +78,7 @@ function Navigation() {
             <NavLink exact className={(navData) => navData.isActive ? "is-active link" : "link"} to='/'>Home</NavLink>
             <NavLink exact className={(navData) => navData.isActive ? "is-active link" : "link"} to='/survey' onClick={handleClickOpen}>Survey</NavLink>
             <NavLink exact className={(navData) => navData.isActive ? "is-active link" : "link"} to='/panduan'>Panduan</NavLink>
+            <NavLink exact className={(navData) => navData.isActive ? "is-active link" : "link"} to='/peta'>Peta Persebaran</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
