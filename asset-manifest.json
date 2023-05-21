@@ -1,7 +1,7 @@
 {
-  "main.css": "/SABKI/static/css/main.393848c9.chunk.css",
-  "main.js": "/SABKI/static/js/main.9db27c5e.chunk.js",
-  "main.js.map": "/SABKI/static/js/main.9db27c5e.chunk.js.map",
+  "main.css": "/SABKI/static/css/main.1e4b148c.chunk.css",
+  "main.js": "/SABKI/static/js/main.a0317aee.chunk.js",
+  "main.js.map": "/SABKI/static/js/main.a0317aee.chunk.js.map",
   "static/js/1.b4c81e8b.chunk.js": "/SABKI/static/js/1.b4c81e8b.chunk.js",
   "static/js/1.b4c81e8b.chunk.js.map": "/SABKI/static/js/1.b4c81e8b.chunk.js.map",
   "static/css/2.ada2a815.chunk.css": "/SABKI/static/css/2.ada2a815.chunk.css",
@@ -10,9 +10,9 @@
   "runtime~main.js": "/SABKI/static/js/runtime~main.f3ae8173.js",
   "runtime~main.js.map": "/SABKI/static/js/runtime~main.f3ae8173.js.map",
   "static/media/Layout.css": "/SABKI/static/media/background-9.1fc234b3.svg",
+  "static/css/main.1e4b148c.chunk.css.map": "/SABKI/static/css/main.1e4b148c.chunk.css.map",
   "static/css/2.ada2a815.chunk.css.map": "/SABKI/static/css/2.ada2a815.chunk.css.map",
-  "static/css/main.393848c9.chunk.css.map": "/SABKI/static/css/main.393848c9.chunk.css.map",
   "index.html": "/SABKI/index.html",
-  "precache-manifest.255608b8f74900e4bb9971a08e0a9890.js": "/SABKI/precache-manifest.255608b8f74900e4bb9971a08e0a9890.js",
+  "precache-manifest.f9dc5bb4ec159a2f22b4d684d13b0fa5.js": "/SABKI/precache-manifest.f9dc5bb4ec159a2f22b4d684d13b0fa5.js",
   "service-worker.js": "/SABKI/service-worker.js"
 }
