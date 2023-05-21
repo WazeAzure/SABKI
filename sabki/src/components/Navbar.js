@@ -109,7 +109,7 @@ function Navigation() {
           </Button>
         </DialogActions>
       </BootstrapDialog>
-    <Outlet />
+    <Outlet context={[open, setOpen]}/>
     </>
     
   );

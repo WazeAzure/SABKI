@@ -23,6 +23,9 @@ import Klinik3 from "./Klinik3";
 import Sekolah2 from "./Sekolah2";
 import Sekolah3 from "./Sekolah3";
 
+// popup
+import { ToastContainer, toast } from "react-toastify";
+
 
 function Survey(){
     const navigate = useNavigate();
@@ -206,6 +209,10 @@ function Survey(){
             SendDataRS(data);
         }
 
+        toast.success('Form submitted successfully!', {
+            position: toast.POSITION.TOP_RIGHT
+        });
+
         navigate("/");
     }
 
@@ -346,8 +353,8 @@ function Survey(){
                     </>
                 ) }
             </form>
-
             </div>
+            <ToastContainer />
             { page > 1 && (<button className="btn btn-primary" onClick={handleBackBtn} style={{marginBottom: "2rem"}}>Back</button>)}
             { page < 5 && (<button className="btn btn-primary" onClick={handleNextBtn} style={{marginBottom: "2rem"}}>Next</button>)}
         </Layout>

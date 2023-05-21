@@ -4,10 +4,15 @@ import "./Home.css";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 
+import { useOutletContext } from "react-router-dom";
+
 function Home(){
+    const [open, setOpen] = useOutletContext();
+
     const navigate = useNavigate();
 
     const handleSurvey = () => {
+        setOpen(true)
         navigate("/survey");
     }
 
