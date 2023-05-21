@@ -215,9 +215,7 @@ function Survey(){
             position: toast.POSITION.TOP_RIGHT
         });
 
-        setTimeout(() => {
-            navigate("/");
-          }, 3000); // Adjust the delay time as needed
+        setPage(page+1)
     }
 
     const handleSelected = (e, type) => {
@@ -251,6 +249,10 @@ function Survey(){
         } else {
             setPage(page - 1);
         }
+    }
+
+    const handleRedirect = () => {
+        navigate("/")
     }
 
     return (
@@ -356,10 +358,20 @@ function Survey(){
                         <button type="submit" className="btn-submit" style={{marginTop: "2rem"}}>Submit</button>
                     </>
                 ) }
+
+                { page === 6 && (
+                    <>
+                        <h3>Terima Kasih Sudah Mengisi Survei!</h3>
+                        <p className="btn-submit" onClick={handleRedirect} style={{textAlign: "center", width: "19rem", margin: "2rem auto"}}>Kembali ke Halaman Utama</p>
+                    </>
+                )}  
+                
             </form>
+            
             </div>
             <ToastContainer />
-            { page > 1 && (<button className="btn btn-primary" onClick={handleBackBtn} style={{marginBottom: "2rem"}}>Back</button>)}
+            
+            { page < 5 && page > 1 && (<button className="btn btn-primary" onClick={handleBackBtn} style={{marginBottom: "2rem"}}>Back</button>)}
             { page < 5 && (<button className="btn btn-primary" onClick={handleNextBtn} style={{marginBottom: "2rem"}}>Next</button>)}
         </Layout>
     )
