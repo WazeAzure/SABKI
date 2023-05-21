@@ -46,3 +46,26 @@ form select:focus, input:focus {
     border: 0.15rem solid rgba(255, 114, 114,1) !important;
     color: rgba(255, 114, 114,1) !important;
 }
+
+.btn-submit {
+    padding: 0.5rem 1rem;
+    border: 0.15rem solid rgba(255, 114, 114, 1);
+    border-radius: 1rem;
+    background-color: rgba(255, 114, 114, 1);
+    color: cornsilk;
+    justify-self: left !important;
+    margin: 0 1rem;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+.btn-submit:hover {
+    background-color: rgba(255, 114, 114,0.0);
+    border: 0.15rem solid rgba(255, 114, 114,1);
+    color: rgba(255, 114, 114,1);
+}
+
+.btn-submit:active {
+    background-color: rgba(255, 114, 114,0.0) !important;
+    border: 0.15rem solid rgba(255, 114, 114,1) !important;
+    color: rgba(255, 114, 114,1) !important;
+}

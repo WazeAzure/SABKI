@@ -22,6 +22,7 @@ import Klinik2 from "./Klinik2";
 import Klinik3 from "./Klinik3";
 import Sekolah2 from "./Sekolah2";
 import Sekolah3 from "./Sekolah3";
+import CustomizedDialogs from "../components/Modals";
 
 function Survey(){
     const navigate = useNavigate();
@@ -34,7 +35,6 @@ function Survey(){
     const [kota, setKota] = useState("");
     const [datakota, setDatakota] = useState([{"no":1, "name":""}]);
     const [dataIndividu, setDataIndividu] = useState({
-        "nama": "",
         "usia": "",
         "jenis_kelamin": "",
         "kategori": ""
@@ -202,7 +202,7 @@ function Survey(){
                 dataRS3: dataRS3,
                 description: "dataRS1 2 3 mengikuti rentang umur 0-5, 6-12, 13-17 tahun"
             }
-            
+
             SendDataRS(data);
         }
 
@@ -244,8 +244,8 @@ function Survey(){
 
     return (
         <Layout background="background-9.svg">
-            <h1 style={{marginTop: "2rem", color: "rgba(255, 114, 114, 1)", fontWeight: "bold", letterSpacing: "3px"
-        }}>Survey ABK Indonesia</h1>
+            <div style={{minHeight: "81vh"}}>
+            <h1 style={{marginTop: "2rem", color: "rgba(255, 114, 114, 1)", fontWeight: "bold", letterSpacing: "3px"}}>Survey ABK Indonesia</h1>
             <hr />
             <form onSubmit={handleSubmit}>
                 { page === 1 && (
@@ -341,10 +341,12 @@ function Survey(){
                 { page === 5 && (
                     <>
                         <h3>Pastikan Data Sudah Benar!</h3>
-                        <button type="submit">Submit</button>
+                        <h4>SEGALA DATA HASIL SURVEI AKAN DIJAMIN KERAHASIAANNYA.</h4>
+                        <button type="submit" className="btn-submit" style={{marginTop: "2rem"}}>Submit</button>
                     </>
                 ) }
             </form>
+            </div>
             { page > 1 && (<button className="btn btn-primary" onClick={handleBackBtn} style={{marginBottom: "2rem"}}>Back</button>)}
             { page < 5 && (<button className="btn btn-primary" onClick={handleNextBtn} style={{marginBottom: "2rem"}}>Next</button>)}
         </Layout>
