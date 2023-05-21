@@ -1,7 +1,7 @@
 {
   "name": "sabki",
   "version": "0.1.0",
-  "homepage": "https://wazeazure.github.io/SABKI",
+  "homepage": "www.surveiabkindonesia.com",
   "private": true,
   "scripts": {
     "predeploy": "npm run build",
