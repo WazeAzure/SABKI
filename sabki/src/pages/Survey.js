@@ -33,7 +33,6 @@ function Survey(){
     const [provinsiID, setProvinsiID] = useState(0);
     const [kota, setKota] = useState("");
     const [datakota, setDatakota] = useState([{"no":1, "name":""}]);
-    const [dataKotaSekolah, setDataKotaSekolah] = useState([{"no":1, "name":""}]);
     const [dataIndividu, setDataIndividu] = useState({
         "nama": "",
         "usia": "",
@@ -42,9 +41,9 @@ function Survey(){
     })
 
     const [namaSekolah, setNamaSekolah] = useState("");
-    const [kotaSekolah, setKotaSekolah] = useState("");
-    const [provinsiSekolah, setProvinsiSekolah] = useState("");
-    const [provinsiSekolahID, setProvinsiSekolahID] = useState("");
+    const [namaKlinik, setNamaKlinik] = useState("");
+    const [namaRS, setNamaRS] = useState("");
+    
     const [tingkatSekolah, setTingkatSekolah] = useState("");
     // Sekolah 1
     const [dataSekolah, setDataSekolah] = useState(
@@ -136,23 +135,6 @@ function Survey(){
     }, [provinsi])
 
     useEffect(() => {
-        console.log(provinsiSekolahID)
-        if (provinsiSekolahID !== 0){
-            let url = "https://api.binderbyte.com/wilayah/kabupaten?api_key=10140d3d1fbb41af4ae8827769a004177f501fbb50a43f10182e59649ace130f&id_provinsi=" + provinsiSekolahID
-            console.log(url)
-            axios.get(url)
-            .then((res) => {
-                const data_kota = res.data.value
-                setDataKotaSekolah(data_kota)
-                console.log(data_kota)
-            })
-            .catch((err) => {
-                console.log(err)
-            })
-        }
-    }, [provinsiSekolah])
-
-    useEffect(() => {
         window.scrollTo({top: 0});
     }, [page])
 
@@ -178,13 +160,13 @@ function Survey(){
                 provinsiID: provinsiID,
                 kota: kota,
                 nama_sekolah: namaSekolah,
-                kota_sekolah: kotaSekolah,
-                provinsi_sekolah: provinsiSekolah,
                 jenjang_sekolah: tingkatSekolah,
                 dataSekolah1: dataSekolah,
                 dataSekolah2: dataSekolah2,
-                dataSekolah3: dataSekolah3
+                dataSekolah3: dataSekolah3,
+                description: "dataSekolah1 2 3 mengikuti rentang umur 0-5, 6-12, 13-17 tahun"
             }
+
             SendDataSekolah(data);
         } else if (kategori === "Klinik"){
             const data = {
@@ -193,10 +175,13 @@ function Survey(){
                 provinsi: provinsi,
                 provinsiID: provinsiID,
                 kota: kota,
+                nama_klinik: namaKlinik,
                 dataKlinik1: dataKlinik,
                 dataKlinik2: dataKlinik2,
-                dataKlinik3: dataKlinik3
+                dataKlinik3: dataKlinik3,
+                description: "dataKlinik1 2 3 mengikuti rentang umur 0-5, 6-12, 13-17 tahun"
             }
+
             SendDataKlinik(data)
         } else if (kategori === "Rumah Sakit"){
             const data = {
@@ -204,6 +189,7 @@ function Survey(){
                 kategori: kategori,
                 provinsi: provinsi,
                 provinsiID: provinsiID,
+                nama_rs: namaRS,
                 kota: kota,
                 bpjs1: bpjs,
                 bpjs2: bpjs2,
@@ -216,6 +202,7 @@ function Survey(){
                 dataRS3: dataRS3,
                 description: "dataRS1 2 3 mengikuti rentang umur 0-5, 6-12, 13-17 tahun"
             }
+            
             SendDataRS(data);
         }
 
@@ -232,11 +219,6 @@ function Survey(){
             setProvinsiID(selectedOptionId)
         } else if (type === "kota"){
             setKota(selectedOption.value)
-        } else if (type === "provinsiSekolah"){
-            setProvinsiSekolah(selectedOption.value)
-            setProvinsiSekolahID(selectedOptionId)
-        } else if (type === "kotaSekolah"){
-            setKotaSekolah(selectedOption.value)
         }
     }
 
@@ -263,7 +245,7 @@ function Survey(){
     return (
         <Layout background="background-9.svg">
             <h1 style={{marginTop: "2rem", color: "rgba(255, 114, 114, 1)", fontWeight: "bold", letterSpacing: "3px"
-        }}>Survey ...</h1>
+        }}>Survey ABK Indonesia</h1>
             <hr />
             <form onSubmit={handleSubmit}>
                 { page === 1 && (
@@ -283,6 +265,43 @@ function Survey(){
                         <option id="individu">Individu / Orangtua</option>
                         </select>
                     </div>
+                    { page === 1 && kategori === "Sekolah" && (
+                        <>
+                        <div className="form-group">
+                            <label htmlFor="name">Silahkan Masukkan Nama Sekolah!</label>
+                            <input type="text" value={namaSekolah} className="form-control" id="nama sekolah" placeholder="SMP Negeri 1 Balikpapan" onChange={(e) => setNamaSekolah(e.target.value)} required/>
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="kategori">Silahkan pilih Tingkatan Sekolah!</label>
+                            <select value={tingkatSekolah} className="form-control" id="id-kategori" onChange={(e) => setTingkatSekolah(e.target.value)}  required>
+                            <option value="" selected disabled hidden className="text-secondary">TK/SD/SMP/SMA</option>
+                            <option id="sekolah">TK</option>
+                            <option id="sekolah">SD</option>
+                            <option id="rumah sakit">SMP/MTS</option>
+                            <option id="klinik">SMA/MA</option>
+                            <option id="individu">Sekolah Luar Biasa</option>
+                            <option id="individu">Sekolah Inklusi</option>
+                            <option id="individu">Lainnya</option>
+                            </select>
+                        </div>
+                        </>
+                    )}
+                    { page === 1 && kategori === "Klinik" && (
+                        <>
+                        <div className="form-group">
+                            <label htmlFor="name">Silahkan Masukkan Nama Klinik!</label>
+                            <input type="text" value={namaKlinik} className="form-control" id="nama klinik" placeholder="Klinik Kolibri" onChange={(e) => setNamaKlinik(e.target.value)} required/>
+                        </div>
+                        </>
+                    )}
+                    { page === 1 && kategori === "Rumah Sakit" && (
+                        <>
+                        <div className="form-group">
+                            <label htmlFor="name">Silahkan Masukkan Nama Rumah Sakit!</label>
+                            <input type="text" value={namaRS} className="form-control" id="nama rs" placeholder="RS Adi Daya" onChange={(e) => setNamaRS(e.target.value)} required/>
+                        </div>
+                        </>
+                    )}
                     <div className="form-group">
                         <label htmlFor="kategori">Silahkan pilih provinsi!</label>
                         <select value={provinsi} className="form-control" id="id-kategori" onChange={(e) => {handleSelected(e, "provinsi")}} required>
@@ -304,45 +323,8 @@ function Survey(){
                 </>
                 )}
 
-                { page === 1 && kategori === "Sekolah" && (
-                    <>
-                    <div className="form-group">
-                        <label htmlFor="name">Silahkan Masukkan Nama Sekolah!</label>
-                        <input type="text" value={namaSekolah} className="form-control" id="nama sekolah" placeholder="SMP Negeri 1 Balikpapan" onChange={(e) => setNamaSekolah(e.target.value)} required/>
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="kategori">Silahkan pilih Tingkatan Sekolah!</label>
-                        <select value={tingkatSekolah} className="form-control" id="id-kategori" onChange={(e) => setTingkatSekolah(e.target.value)}  required>
-                        <option value="" selected disabled hidden className="text-secondary">TK/SD/SMP/SMA</option>
-                        <option id="sekolah">TK</option>
-                        <option id="sekolah">SD</option>
-                        <option id="rumah sakit">SMP/MTS</option>
-                        <option id="klinik">SMA/MA</option>
-                        <option id="individu">Sekolah Luar Biasa</option>
-                        <option id="individu">Sekolah Inklusi</option>
-                        <option id="individu">Lainnya</option>
-                        </select>
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="kategori">Silahkan pilih asal provinsi sekolah!</label>
-                        <select value={provinsiSekolah} className="form-control" id="id-kategori" onChange={(e) => {handleSelected(e, "provinsiSekolah")}} required>
-                        <option value="" selected disabled hidden>Asal Provinsi</option>
-                        { data_provinsi.map((prov) => (
-                            <option id={prov.id}>{prov.name}</option>
-                        ))}
-                        </select>
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="kategori">Silahkan pilih asal kota sekolah!</label>
-                        <select value={kotaSekolah} className="form-control" id="id-kategori" onChange={(e) => {handleSelected(e, "kotaSekolah")}} required>
-                        <option value="" selected disabled hidden>Asal Kota</option>
-                        { dataKotaSekolah.map((kota) => (
-                            <option id={kota.id}>{kota.name}</option>
-                        ))}
-                        </select>
-                    </div>
-                    </>
-                )}
+                
+
                 { page === 2 && kategori === "Sekolah" && <Sekolah dataSekolah={dataSekolah} setDataSekolah={setDataSekolah} /> }
                 { page === 2 && kategori === "Rumah Sakit" && <RS dataRS={dataRS} setDataRS={setDataRS} bpjs={bpjs} setBpjs={setBpjs} nonbpjs={nonbpjs} setNonbpjs={setNonbpjs} /> }
                 { page === 2 && kategori === "Klinik" && <Klinik dataKlinik={dataKlinik} setDataKlinik={setDataKlinik} /> }
@@ -363,8 +345,8 @@ function Survey(){
                     </>
                 ) }
             </form>
-            { page > 1 && (<button className="btn btn-primary" onClick={handleBackBtn}>Back</button>)}
-            { page < 5 && (<button className="btn btn-primary" onClick={handleNextBtn}>Next</button>)}
+            { page > 1 && (<button className="btn btn-primary" onClick={handleBackBtn} style={{marginBottom: "2rem"}}>Back</button>)}
+            { page < 5 && (<button className="btn btn-primary" onClick={handleNextBtn} style={{marginBottom: "2rem"}}>Next</button>)}
         </Layout>
     )
 };

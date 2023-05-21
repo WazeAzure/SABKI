@@ -6,9 +6,9 @@
     background-color: rgba(255, 114, 114, 1);
     color: cornsilk;
     justify-self: left !important;
-    margin: 0 1rem;
+    margin: 0.5rem 1rem;
     float: left;
-    letter-spacing: 1px;
+    letter-spacing: 0.1rem;
     transition: 0.3s;
 }
 
@@ -16,6 +16,7 @@
     background-color: rgba(255, 114, 114,0.0);
     border: 0.15rem solid rgba(255, 114, 114,1);
     color: rgba(255, 114, 114,1);
+    
 }
 
 .ic-survey {
@@ -30,9 +31,9 @@
     background-color: rgba(255, 114, 114, 1);
     color: cornsilk;
     justify-self: left !important;
-    margin: 0 1rem;
+    margin: 0.5rem 1rem;
     float: left;
-    letter-spacing: 1px;
+    letter-spacing: 0.1rem;
     transition: 0.3s;
 }
 

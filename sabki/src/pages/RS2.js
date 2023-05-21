@@ -24,16 +24,16 @@ function RS2({dataRS, setDataRS, bpjs, setBpjs, nonbpjs, setNonbpjs}){
             <hr />
             <div className="form-group">
                 <label htmlFor="name" id={1}>Silahkan Masukkan Jumlah Pasien BPJS!</label>
-                <input type="number" value={bpjs} className="form-control"  placeholder="0" onChange={(e) => {setBpjs(e.target.value)}} required/>
+                <input min="0" type="number" value={bpjs} className="form-control"  placeholder="0" onChange={(e) => {setBpjs(e.target.value)}} required/>
             </div>
             <div className="form-group">
                 <label htmlFor="name" id={1}>Silahkan Masukkan Jumlah Pasien Non-BPJS!</label>
-                <input type="number" value={nonbpjs} className="form-control"  placeholder="0" onChange={(e) => {setNonbpjs(e.target.value)}} required/>
+                <input min="0" type="number" value={nonbpjs} className="form-control"  placeholder="0" onChange={(e) => {setNonbpjs(e.target.value)}} required/>
             </div>
             { data.map((pasien, index) => (
                 <div className="form-group">
                     <label htmlFor="name" id={pasien.nomor}>Silahkan Masukkan Jumlah {pasien.type}!</label>
-                    <input value={dataRS[index].jumlah === 0? "": dataRS[index].jumlah} type="number" className="form-control" id={pasien.nomor} placeholder="0" onChange={handleUpdate} required/>
+                    <input min="0" value={dataRS[index].jumlah === 0? "": dataRS[index].jumlah} type="number" className="form-control" id={pasien.nomor} placeholder="0" onChange={handleUpdate} required/>
                 </div>
             ))}
 

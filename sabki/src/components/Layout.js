@@ -9,7 +9,7 @@ function Layout (props) {
   return (
     <div className="fullscreen-div" style={{height: "100%", display: "flex", flexDirection: "column"}}>
       
-      <div id={props.background !== "background-9.svg" ? "home-id" : "home2"} style={{paddingBottom: "2rem"}}>
+      <div id={props.background !== "background-9.svg" ? "home-id" : "home2"} style={{}}>
         <div className="container">{props.children}</div>
       </div>
       

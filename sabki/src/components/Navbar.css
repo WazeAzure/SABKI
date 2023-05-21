@@ -2,6 +2,7 @@
     text-decoration: none;
     color: orange;
     padding: 0 1rem 0 1rem;
+    line-height: 40px;
 }
 
 .link:hover {
@@ -11,4 +12,10 @@
 .nav {
     background-color: rgba(255, 248, 220, 0.5) !important;
     position:sticky;   
+}
+
+.is-active {
+    font-weight: bold;
+    background-color: rgb(254, 236, 178);
+    border-radius: 1rem;
 }

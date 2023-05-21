@@ -25,7 +25,7 @@ function Sekolah3({dataSekolah, setDataSekolah}){
             { data.map((anak, index) => (
                 <div className="form-group">
                     <label htmlFor="name" id={anak.nomor}>Silahkan Masukkan Jumlah {anak.type}!</label>
-                    <input value={dataSekolah[index].jumlah === 0? "": dataSekolah[index].jumlah} type="number" className="form-control" id={anak.nomor} placeholder="0" onChange={handleUpdate} required/>
+                    <input min="0" value={dataSekolah[index].jumlah === 0? "": dataSekolah[index].jumlah} type="number" className="form-control" id={anak.nomor} placeholder="0" onChange={handleUpdate} required/>
                 </div>
             ))}
         </div>
