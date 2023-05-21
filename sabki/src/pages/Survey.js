@@ -22,7 +22,7 @@ import Klinik2 from "./Klinik2";
 import Klinik3 from "./Klinik3";
 import Sekolah2 from "./Sekolah2";
 import Sekolah3 from "./Sekolah3";
-import CustomizedDialogs from "../components/Modals";
+
 
 function Survey(){
     const navigate = useNavigate();
@@ -346,6 +346,7 @@ function Survey(){
                     </>
                 ) }
             </form>
+
             </div>
             { page > 1 && (<button className="btn btn-primary" onClick={handleBackBtn} style={{marginBottom: "2rem"}}>Back</button>)}
             { page < 5 && (<button className="btn btn-primary" onClick={handleNextBtn} style={{marginBottom: "2rem"}}>Next</button>)}

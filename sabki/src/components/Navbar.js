@@ -82,6 +82,7 @@ function Navigation() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+
     <BootstrapDialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
@@ -94,7 +95,7 @@ function Navigation() {
           <Typography gutterBottom>
           Sebelum mengisi survei ini, mohon untuk membaca petunjuk pengisian dengan teliti:
           <ol>
-            <li>Pastikan Anda telah membaca <Link to="/panduan">PANDUAN</Link> Survei Anak Berkebutuhan Khusus Indonesia.</li>
+            <li>Pastikan Anda telah membaca <Link to="/panduan" onClick={handleClose}>PANDUAN</Link> Survei Anak Berkebutuhan Khusus Indonesia.</li>
             <li>Isilah seluruh data dengan lengkap dan benar pada kotak isian yang sudah disediakan.</li>
             <li>Setelah seluruh data pada formulir ini telah diisi, klik tombol "Selanjutnya" untuk melanjutkan ke proses selanjutnya.</li>
             <li>Khusus untuk <b>sekolah, rumah sakit, dan klinik</b> akan mengisikan rekapitulasi jumlah anak berkebutuhan khusus yang ditangani sesuai dengan kategorial umur: 0-5 tahun; 6-12 tahun; 13-17 tahun.</li>
