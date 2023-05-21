@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "50c2f504ccc0b5a5925e",
-    "url": "/SABKI/static/css/main.46ab48b9.chunk.css"
+    "revision": "8f1cca96ce339b295455",
+    "url": "/SABKI/static/css/main.1dcb1fb8.chunk.css"
   },
   {
-    "revision": "50c2f504ccc0b5a5925e",
-    "url": "/SABKI/static/js/main.50c2f504.chunk.js"
+    "revision": "8f1cca96ce339b295455",
+    "url": "/SABKI/static/js/main.8f1cca96.chunk.js"
   },
   {
     "revision": "14fb4f4949607655985a",
@@ -32,7 +32,7 @@ self.__precacheManifest = [
     "url": "/SABKI/static/media/background-9.1fc234b3.svg"
   },
   {
-    "revision": "d6f3bb87ab1aa4e5807fb84022ca289c",
+    "revision": "5ae68427dcafc0cdbbc789a48cbdaeee",
     "url": "/SABKI/index.html"
   }
 ];
