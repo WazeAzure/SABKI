@@ -1,7 +1,7 @@
 {
   "name": "sabki",
   "version": "0.1.0",
-  "homepage": "www.surveiabkindonesia.com",
+  "homepage": "https://www.surveiabkindonesia.com/",
   "private": true,
   "scripts": {
     "predeploy": "npm run build",
