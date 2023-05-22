@@ -9,11 +9,14 @@ import "./Map.css";
 import Layout from "./Layout";
 
 function getColor(d) {
-  return  d > 100 ? '#bd0026' :
-          d > 75 ? '#f03b20' :
-          d > 50 ? '#fd8d3c' :
-          d >= 10 ? '#fecc5c'  :
-          '#ffffb2' ;
+  return  d > 400 ? '#b10026' :
+          d > 300 ? '#e31a1c' :
+          d > 200 ? '#fc4e2a' :
+          d > 100 ? '#fd8d3c' :
+          d > 75 ? '#feb24c' :
+          d > 50 ? '#fed976' :
+          d >= 10 ? '#ffeda0'  :
+          '#ffffcc' ;
 }
 
 function style(feature) {
@@ -30,7 +33,7 @@ function style(feature) {
 function PetaIndo  ()  {
     const [highlightedFeature, setHighlightedFeature] = useState(null);
     const [mapInstance, setMapInstance] = useState(null);
-    const [infoContent, setInfoContent] = useState('Hover over a state');
+    const [infoContent, setInfoContent] = useState('Provinsi');
     const [infoContentDensity, setInfoContentDensity] = useState(0);
 
     const provinceData = prov
@@ -45,11 +48,11 @@ function PetaIndo  ()  {
           weight: 5,
         color: '#666',
         dashArray: '',
-        fillOpacity: 0.7,
+        fillOpacity: 0.6,
       });
     
      setHighlightedFeature(layer);
-     setInfoContent(`THis is ${layer.feature.properties.Propinsi}`)
+     setInfoContent(`${layer.feature.properties.Propinsi}`)
      setInfoContentDensity(layer.feature.properties.density)
      if(mapInstance){
       mapInstance.fitBounds(layer.getBounds());
@@ -68,7 +71,7 @@ function PetaIndo  ()  {
       });
 
       setHighlightedFeature(null);
-      setInfoContent("Hover over a state!");
+      setInfoContent("Provinsi");
       setInfoContentDensity(0);
       if(mapInstance){
         mapInstance.fitBounds(provinceData.bbox);
@@ -107,18 +110,34 @@ function PetaIndo  ()  {
   
       return (
         <div className="info-control">
-          <h4>US Population Density</h4>
-          <div className="info-content">{infoContent}</div>
-          <p>Banyak anak {infoContentDensity}</p>
+          <h4>Jumlah Anak Berkebutuhan Khusus</h4>
+          <div className="info-content">{infoContent}: {infoContentDensity} anak</div>
         </div>
       );
     };
-  
+
+    const Legend = () => {
+      const map = useMap();
+
+      const grades = [0, 10, 50, 75, 10, 200, 300, 400]
+
+      return (
+        <div className="info legend">
+          { grades.map((data, i) => (
+            <>
+              <i style= {{backgroundColor: getColor(grades[i]+1)}}></i> {grades[i] + (grades[i + 1] ? "-" + grades[i + 1] : '+')} <br /> 
+            </>
+          )) 
+          }
+        </div>
+      )
+    }
+   
 
     return (
       <Layout>
         <h1>Peta Persebaran Karakteristik di Indonesia</h1>
-        <MapContainer center={[-2.526, 113.54]} zoom={5}>
+        <MapContainer center={[-2.526, 115.54]} zoom={5} scrollWheelZoom={false}>
           <TileLayer 
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
@@ -127,6 +146,7 @@ function PetaIndo  ()  {
           <GeoJSON data={provinceData} style={style} onEachFeature={onEachFeature}/>
 
           <CustomControl position="topright" />
+          <Legend />
         </MapContainer>
       </Layout>
     );
