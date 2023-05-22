@@ -110,7 +110,7 @@ function PetaIndo  ()  {
   
       return (
         <div className="info-control">
-          <h4>Jumlah Anak Berkebutuhan Khusus</h4>
+          <h4 style={{fontSize: "1rem"}}>Jumlah Anak Berkebutuhan Khusus</h4>
           <div className="info-content">{infoContent}: {infoContentDensity} anak</div>
         </div>
       );
