@@ -72,8 +72,8 @@ function Navigation() {
     <Navbar expand="lg" className="nav">
       <Container>
         <Navbar.Brand href="/">SABKI</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Toggle aria-controls="basic-navbar-nav" className="navbarToggle" />
+        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav className="me-auto">
             <NavLink exact className={(navData) => navData.isActive ? "is-active link" : "link"} to='/'>Home</NavLink>
             <NavLink exact className={(navData) => navData.isActive ? "is-active link" : "link"} to='/survey' onClick={handleClickOpen}>Survey</NavLink>
