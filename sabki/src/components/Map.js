@@ -135,7 +135,7 @@ function PetaIndo  ()  {
    
 
     return (
-      <Layout>
+      <>
         <h1>Peta Persebaran Karakteristik di Indonesia</h1>
         <MapContainer center={[-2.526, 115.54]} zoom={5} scrollWheelZoom={false}>
           <TileLayer 
@@ -148,26 +148,9 @@ function PetaIndo  ()  {
           <CustomControl position="topright" />
           <Legend />
         </MapContainer>
-      </Layout>
+      </>
     );
   };
-
-// function PetaIndo  ()  {
-//   const provinceData = prov
-//   prov.features = prov.features.map((data, i) => {return {...data, properties: { ...data.properties, density: i*10}}})
-//   console.log(prov.features)
-//   return (
-//     <Layout>
-//       <h1>Peta Persebaran Karakteristik di Indonesia</h1>
-//       <MapContainer center={[-2.526, 113.54]} zoom={5}>
-//         <TileLayer 
-//           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-//         />
-//         <GeoJSON data={provinceData}/>
-//       </MapContainer>
-//     </Layout>
-//   );
-// };
 
 export default PetaIndo;
 
